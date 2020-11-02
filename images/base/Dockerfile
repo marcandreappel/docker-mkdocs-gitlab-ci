@@ -8,3 +8,5 @@ RUN npm i -g node-sass@4.14.1 request@2.88.2 har-validator@5.1.5
 RUN cd src/mkpdfs-mkdocs-plugin/mkpdfs_mkdocs/design && npm i && npm i modularscale-sass --save-dev
 RUN cd src/mkpdfs-mkdocs-plugin/mkpdfs_mkdocs/design && node-sass report.scss report.css
 RUN cd src/mkpdfs-mkdocs-plugin && python3 setup.py install
+ENV LC_ALL=en_US.utf-8
+ENV LANG=en_US.utf-8
