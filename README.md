@@ -1,6 +1,6 @@
 # MkDocs Docker image for GitLab CI
 
-A Docker image for MkDocs and MkPDFs projects.
+A Docker image for MkDocs projects, including the `with-pdf` plugin.
 
 ## Usage
 
@@ -12,17 +12,18 @@ image: marcandreappel/docker-mkdocs-gitlab-ci:latest
 test:
   stage: test
   script:
-    - mkdocs build --strict --verbose --site-dir test
+    - mkdocs build -c -s -v -d test
   artifacts:
     paths:
       - test
+  # Optional
   except:
     - master
 
 pages:
   stage: deploy
   script:
-    - mkdocs build --strict --verbose
+    - mkdocs build -s
   artifacts:
     paths:
       - public
